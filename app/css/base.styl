@@ -1,0 +1,98 @@
+$li-offset-bottom = 40px;
+
+body {
+  background: white;
+}
+
+a {
+  color: blue;
+  text-decoration: none;
+  &:hover {
+    text-decoration: underline;
+  }
+}
+
+.updates {
+  @extend ul.no-bullet;
+  margin-left: 20px;
+
+  h2, h3, p {
+    margin: 0;
+    padding: 0;
+  }
+
+  h3 {
+    font-size: 22px;
+    line-height: 26px;
+    margin-bottom: 4px;
+  }
+
+  p {
+    font-size: 16px;
+    line-height: 22px;
+  }
+
+  li {
+    margin-bottom: $li-offset-bottom;
+    position: relative;
+
+    // List Items - Title Circle
+    &:after {
+      border-radius: 1000px;
+      box-shadow: 0 0 0 2px grey;
+      content: '';
+      position: absolute;
+      width: 10px;
+      height: 10px;
+      top: 9px;
+      left: -20px;
+    }
+
+    // List Items - Vertical Line
+    &:before {
+      background-color: light-grey;
+      content: '';
+      position: absolute;
+      width: 2px;
+      top: 20px;
+      bottom: -($li-offset-bottom + 7px);
+      left: -16px;
+    }
+
+    // List Items - Last list item
+    &:last-child {
+      &:before { bottom: 10px; }
+    }
+
+
+    date {
+      position: absolute;
+      color: rgba(black, .4);
+      font-size: 13px;
+      font-style: italic;
+      top: -18px;
+    }
+
+    .item {
+      color: grey;
+      font-size: 16px;
+      line-height: 22px;
+      position: relative;
+
+      // List Items - Item bullet
+      &:after {
+        border-radius: 1000px;
+        background-color: grey;
+        content: '';
+        position: absolute;
+        width: 6px;
+        height: 6px;
+        top: 8px;
+        left: -18px;
+      }
+
+    }
+
+  }
+
+}

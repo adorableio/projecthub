@@ -1,0 +1,16 @@
+{
+  "ext": ".coffee",
+  "watch": [
+    "data/*.*",
+    "lib/**/*",
+    "app.coffee"
+  ],
+  "ignore": [
+    "app/**/*",
+    ".generated/**/*",
+    "postinstall.js"
+  ],
+  "env": {
+    "NODE_ENV": "development"
+  }
+}

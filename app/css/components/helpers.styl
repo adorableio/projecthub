@@ -1,0 +1,56 @@
+clearfix() {
+  &:after {
+    content: "";
+    display: block;
+    clear: both;
+    visibility: hidden;
+    font-size: 0;
+    line-height: 0;
+    height: 0;
+  }
+}
+
+animation() {
+  -webkit-animation: arguments;
+  -moz-animation:    arguments;
+  -o-animation:      arguments;
+  animation:         arguments;
+}
+
+
+transition() {
+  -webkit-transition: arguments;
+  -moz-transition: arguments;
+  transition: arguments;
+}
+
+transform(value) {
+  -moz-transform: arguments;
+  -webkit-transform: arguments;
+  transform: arguments;
+}
+
+transform-origin(value) {
+  -ms-transform-origin: arguments;
+  -o-transform-origin: arguments;
+  -webkit-transform-origin: arguments;
+  transform-origin: arguments;
+}
+
+user-select() {
+  -webkit-user-select: arguments;
+  -moz-user-select: arguments;
+  -ms-user-select: arguments;
+  -o-user-select: arguments;
+  user-select: arguments;
+}
+
+selection() {
+  ::selection {
+    {block}
+  }
+
+  ::-moz-selection {
+    {block}
+  }
+}

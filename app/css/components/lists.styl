@@ -1,0 +1,33 @@
+ul {
+  padding-left: 0;
+}
+
+.inline-list {
+  padding-left: 0;
+  > * {
+    display: inline-block;
+  }
+
+  &.bullet {
+    > * {
+      &:first-child:before { display: none; }
+      &:before {
+        display: inline-block;
+        content: '•';
+        margin-left: 10px;
+        margin-right: 10px;
+      }
+    }
+  }
+}
+
+ul {
+  &.no-bullet {
+    list-style-type: none;
+    padding: 0px;
+    margin: 0px;
+    > * {
+
+    }
+  }
+}

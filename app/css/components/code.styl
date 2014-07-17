@@ -1,0 +1,35 @@
+pre {
+  box-shadow: code-border;
+  background-color: code-background-color;
+  padding-left: 20px;
+  padding-right: 20px;
+  margin-bottom: column-gutter;
+  code {
+    color: code-font-color;
+    font-family: code-font;
+    font-size: code-font-size;
+    font-weight: code-font-weight;
+    line-height: code-line-height;
+
+    span {
+      &.comment {
+        color: code-comment-color;
+      }
+
+      &.bash {
+        &:before {
+          content: '$';
+          color: code-comment-color;
+          display: inline-block;
+          margin-right: 6px;
+          user-select: none;
+        }
+      }
+
+    }
+  }
+}
+
+.text-center {
+  text-align: center;
+}

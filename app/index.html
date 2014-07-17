@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>{{{data.project_title}}}</title>
+  <link href='http://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,700|Open+Sans' rel='stylesheet' type='text/css'>
+  <link rel="stylesheet" href="/assets/css/main.css">
+</head>
+<body>
+
+  <div class="row">
+    <div class="small-12 columns">
+      <h1>{{{data.project_title}}}</h1>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="small-12 columns">
+      <ul class="updates">
+      {{#each data.updates}}
+        <li>
+          <date> {{{date}}} </date>
+          <h3> {{{title}}} </h3>
+          {{#each this.item}}
+            <div class="item">
+              {{#if this.url}}<a href="{{this.url}}" target="_blank"> {{{this.title}}} </a>{{/if}}
+              {{#if this.note}}<p> {{{this.note}}} </p>{{/if}}
+            </div>
+          {{/each}}
+        </li>
+      {{/each}}
+      </ul>
+    </div>
+  </div>
+
+  <script src="/vendor/jquery/dist/jquery.min.js"></script>
+  <script src="/assets/js/app.js"></script>
+</body>
+</html>

@@ -1,0 +1,30 @@
+
+########################################
+# General Configuration
+########################################
+
+project_title: My Awesome Project Hub!
+
+# PASSWORD PROTECT ON HEROKU
+# - uncomment the lines below if you want to use basic auth
+# username: someuser
+# password: password
+
+
+########################################
+# Example Items
+########################################
+updates:
+  - date: July 15, 2014
+    title: Visited Google Website
+    item:
+      - title: View google.com
+        url: "http://google.com"
+
+  - date: July 14, 2014
+    title: High-fived a friend!
+    item:
+      - title: View the high-five!
+        url: https://s3.amazonaws.com/giphymedia/media/WKdPOVCG5LPaM/giphy.gif
+      - title: View the celebration
+        url: http://media.giphy.com/media/aTUAoYk7Tj87S/giphy.gif

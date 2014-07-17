@@ -1,0 +1,71 @@
+
+// (╯°□°）╯︵ ┻━┻ - Y U MAKE ME REMEMBER CHARCODES?!
+
+// Dynamically build the icon font path, and import these guys!
+@font-face {
+  font-family: icon-font-name;
+  src:  url(s('%s%s.eot', unquote(icon-root-url), unquote(icon-font-name)));
+  src:  url(s("%s%s.eot?#iefix", unquote(icon-root-url), unquote(icon-font-name))) format("embedded-opentype"),
+        url(s("%s%s.ttf", unquote(icon-root-url), unquote(icon-font-name))) format("truetype"),
+        url(s("%s%s.woff", unquote(icon-root-url), unquote(icon-font-name))) format("woff"),
+        url(s("%s%s.svg#%s", unquote(icon-root-url), unquote(icon-font-name), unquote(icon-font-name))) format("svg");
+  font-weight: normal;
+  font-style: normal;
+}
+
+
+// It's always nice to have a base style for your icon font
+$icon-font-base {
+  display: inline-block;
+  font-family: icon-font-name;
+  speak: none;
+  font-variant: normal;
+  font-style: normal;
+  font-weight: normal;
+  text-transform: none;
+  line-height: 1;
+  margin-right: .25em;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+
+// Returns the character code for the requested icon
+// aka, it abstracts the get-list-value method, so you don't have to
+icon(name) {
+  char-code = icons[name];
+  @extend $icon-font-base;
+  content: char-code;
+}
+
+
+// Adds the specified icon to the specified pseudo class
+inline-icon(icon-name = '', color = inherit, pseudo = before, font-size = false, margin = 0, padding = 0) {
+  &:{pseudo} {
+    icon(icon-name);
+    if font-size { font-size: font-size; }
+    color: color;
+    margin: margin;
+    padding: padding;
+  }
+}
+
+// All icon classes should extend the icon-font module
+[class*="icon-"]:before {
+  @extend $icon-font-base;
+  &:active { text-decoration: none; }
+}
+
+// Creates an .icon- class for every icon in the $icons list
+
+for name, code in icons {
+  .icon-{name}:before {
+    content: code;
+  }
+}
+
+
+
+// ┬──┬◡ﾉ(° -°ﾉ) - oh sorry, I feel better now. let me put your table back.
+
+

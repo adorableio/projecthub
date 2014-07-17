@@ -1,0 +1,77 @@
+* { box-sizing: border-box; }
+
+// grid setup
+total-columns = 12;
+row-width = 1000px;
+column-gutter = 30px;
+
+// Media Query Ranges
+small-range = (0em 40em);
+medium-range = min(40.063em, 64em);
+large-range = min(64.063em, 90em);
+
+screen = "only screen";
+
+small-up = screen;
+medium-up = "screen and (min-width: %s)" % medium-range;
+large-up = "screen and (min-width: %s)" % large-range;
+
+
+.column,
+.columns {
+  float: left;
+  position: relative;
+
+  .center {
+    text-align: center;
+  }
+
+  img { width: 100%; }
+}
+
+build-grid(class = 'small', columns = 12) {
+
+  // Iterate through columns
+  for i in (1..columns) {
+    percent-width = 1% * ((i / columns) * 100)
+
+    // Build the column class
+    .{class}-{i} {
+      width: percent-width;
+      padding-left: (column-gutter / 2);
+      padding-right: (column-gutter / 2);
+    }
+  }
+  .{class}-center {
+    float: none;
+    margin: 0 auto;
+  }
+}
+
+grid-column(columns = 1) {
+  percent-width = 1% * ((i / columns) * 100);
+  width: percent-width;
+}
+
+build-grid();
+
+@media small-up {
+  build-grid(small);
+}
+
+@media medium-up {
+  build-grid(medium);
+}
+
+@media large-up {
+  build-grid(large);
+}
+
+.row {
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: (column-gutter / 2);
+  width: 100%;
+  max-width: row-width;
+  clearfix();
+}
