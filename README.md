@@ -1,4 +1,4 @@
-# A Node projecthub
+# A Node Project hub
 
 ### Setup
 
