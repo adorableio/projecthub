@@ -11,7 +11,11 @@
     "start": "node_modules/.bin/nodemon start.js",
     "postinstall": "node postinstall.js"
   },
-  "author": "",
+  "author": {
+    "name": "Kevin Altman",
+    "email": "kevin@itsthatguy.com",
+    "url": "https://github.com/itsthatguy"
+  },
   "license": "ISC",
   "dependencies": {
     "basic-auth-connect": "^1.0.0",
@@ -44,7 +48,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/itsthatguy/firepit.git"
+    "url": "https://github.com/adorableio/projecthub.git"
   },
   "devDependencies": {
     "run-sequence": "^0.3.6"
