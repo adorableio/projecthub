@@ -1,7 +1,7 @@
 {
   "ext": ".coffee",
   "watch": [
-    "data/*.*",
+    "data/config.yaml",
     "lib/**/*",
     "app.coffee"
   ],
