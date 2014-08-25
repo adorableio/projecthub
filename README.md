@@ -13,7 +13,7 @@
 
 ### Configuring
 
-- Edit the `data/config.yaml` file to your liking
+- Edit the `data/config.yaml` and `data/items.yaml` file to your liking
 
 ### Deploying
 

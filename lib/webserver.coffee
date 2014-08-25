@@ -1,4 +1,3 @@
-
 http      = require('http')
 express   = require('express')
 path      = require('path')
@@ -42,8 +41,9 @@ webserver.listen(port)
 
 # Routes
 app.get '/', (req, res) ->
+  items  = getDataFile('items.yaml')
   # Sort updates by date
-  config.updates = config.updates.sort (a, b) ->
+  items.updates = items.updates.sort (a, b) ->
     aStr = a.date.toLowerCase()
     bStr = b.date.toLowerCase()
     if (aStr < bStr)
@@ -52,7 +52,6 @@ app.get '/', (req, res) ->
       return -1
     else
       return 0
-  res.render(generatedPath + '/index.html', {data: config})
-
+  res.render(generatedPath + '/index.html', {data: items})
 
 module.exports = webserver
